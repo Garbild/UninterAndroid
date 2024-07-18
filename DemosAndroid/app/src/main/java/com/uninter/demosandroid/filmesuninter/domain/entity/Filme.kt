@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-@Entity(tableName = "filme")
+@Entity(tableName = "filme")//entidade
 data class Filme(
     @PrimaryKey val id: Int,
     val name: String,
