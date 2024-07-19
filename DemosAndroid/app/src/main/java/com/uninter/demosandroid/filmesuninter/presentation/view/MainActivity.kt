@@ -14,34 +14,26 @@ import com.uninter.demosandroid.filmesuninter.presentation.viewmodel.MainViewMod
 
 class MainActivity : ComponentActivity() {
 
-
-    private  lateinit var  recyclerView: RecyclerView
-
-    val viewModel by lazy {
-        var factory = FilmeViewModelFactory(application)
-        ViewModelProvider( this, factory)[MainViewModel::class.java]
+    private lateinit var recyclerView: RecyclerView
+    private val viewModel by lazy {
+        val factory = FilmeViewModelFactory(application)
+        ViewModelProvider(this, factory)[MainViewModel::class.java]
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-
         recyclerView = findViewById(R.id.rcvFilmes)
-        viewModel.filme.observe(this){
-            recyclerView.layoutManager = LinearLayoutManager(this )
-            recyclerView.adapter = FilmeAdapter(it)
+        recyclerView.layoutManager = LinearLayoutManager(this)
 
-
+        viewModel.filme.observe(this) { filmes ->
+            recyclerView.adapter = FilmeAdapter(filmes)
         }
-
-
     }
 
     override fun onResume() {
         super.onResume()
         viewModel.load()
     }
-
 }

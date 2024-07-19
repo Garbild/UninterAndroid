@@ -1,5 +1,6 @@
 package com.uninter.demosandroid.filmesuninter.domain.usecase
 
+import android.annotation.SuppressLint
 import android.app.Application
 import com.uninter.demosandroid.filmesuninter.data.repository.FilmeApiRepository
 import com.uninter.demosandroid.filmesuninter.data.repository.FilmeSqliteRepository
@@ -9,6 +10,7 @@ import com.uninter.demosandroid.filmesuninter.domain.entity.Filme
 class FilmeUseCase(application: Application) {
     private val apiRepository = FilmeApiRepository // Crie uma instância, se necessário
     private val dbRepository = FilmeSqliteRepository(application)
+    @SuppressLint("SuspiciousIndentation")
     fun get(): List<Filme>
     {
         var filmes: List<Filme> = listOf()
