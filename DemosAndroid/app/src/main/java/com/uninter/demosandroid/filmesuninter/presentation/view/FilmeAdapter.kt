@@ -37,7 +37,7 @@ class FilmeAdapter(private val itens: List<Filme>) : RecyclerView.Adapter<FilmeA
             }
         }
     }
-
+//
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.filme_item, parent, false)
         return ViewHolder(view)
