@@ -46,7 +46,7 @@ class DetailActivity : AppCompatActivity() {
                 if (filme.favorite) unfavorite(filme) else favorite(filme)
                 finish()
             }
-        }
+        }//
     }
 
     private fun unfavorite(filme: Filme) {
