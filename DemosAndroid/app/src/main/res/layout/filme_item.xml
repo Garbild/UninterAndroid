@@ -38,15 +38,15 @@
             tools:layout_editor_absoluteX="16dp" />
 
         <ImageView
-            android:id="@+id/favorito"
+            android:id="@+id/imgfavorite"
             android:layout_width="46dp"
             android:layout_height="33dp"
             android:layout_marginTop="8dp"
-            android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/fav"
-            tools:visibility="visible" />
+            app:srcCompat="@drawable/favorito"
+            android:visibility="visible"
+             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

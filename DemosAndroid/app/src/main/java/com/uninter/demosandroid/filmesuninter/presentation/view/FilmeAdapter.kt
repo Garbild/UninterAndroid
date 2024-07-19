@@ -1,6 +1,7 @@
 package com.uninter.demosandroid.filmesuninter.presentation.view
 
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,10 +25,11 @@ class FilmeAdapter(private val itens: List<Filme>) : RecyclerView.Adapter<FilmeA
 
                 Glide.with(this).load("$imgBasePath${filme.backdropPath}").into(imgPicture)
 
-                findViewById<ImageView>(R.id.favorito).visibility = if (filme.favorite) View.VISIBLE else View.GONE
+                findViewById<ImageView>(R.id.imgfavorite).visibility = if (filme.favorite) View.VISIBLE else View.GONE
 
                 findViewById<TextView>(R.id.txtTitle).text = filme.title
 
+                Log.d("FilmeAdapter", "Filme ID: ${filme.id}, Favorite: ${filme.favorite}")
                 setOnClickListener {
                     val intent = Intent(context, DetailActivity::class.java)
                     intent.putExtra("filme", filme)
@@ -35,8 +37,8 @@ class FilmeAdapter(private val itens: List<Filme>) : RecyclerView.Adapter<FilmeA
 
                 }
             }
-        }
-    }
+        }//
+    }//
 //
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.filme_item, parent, false)

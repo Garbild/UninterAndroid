@@ -20,14 +20,4 @@ class MainViewModel(application: Application): ViewModel() {
             useCase.get()
         }).start()
     }
-    fun updateFavoriteStatus(filme: Filme) {
-        viewModelScope.launch {
-            if (filme.favorite) {
-                useCase.favorite(filme)
-            } else {
-                useCase.unfavorite(filme)
-            }
-            load()
-        }
-    }
 }
