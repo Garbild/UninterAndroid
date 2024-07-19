@@ -14,5 +14,6 @@ data class Filme(
     val poularity: Double,
     @ColumnInfo( "backdrop_path")@SerializedName("backdrop_path") val backdropPath: String,
     @ColumnInfo( "poster_path")@SerializedName("poster_path")val posterPath: String,
-    val adult: Boolean
+    val adult: Boolean,
+    var favorite: Boolean
 ): Serializable
