@@ -4,15 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="10dp"
     android:layout_marginHorizontal="10dp"
+    android:layout_marginTop="10dp"
     app:cardCornerRadius="20dp">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="150dp">
 
         <ImageView
-            android:id="@+id/img_picture"
+            android:id="@+id/imgpicture"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
@@ -23,12 +24,12 @@
             app:srcCompat="@drawable/backdrop" />
 
         <TextView
-            android:id="@+id/img_text"
+            android:id="@+id/txtTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#66FFFFFF"
             android:gravity="center"
-            android:text="Inside Out 2"
+            android:text="title"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -37,13 +38,15 @@
             tools:layout_editor_absoluteX="16dp" />
 
         <ImageView
-            android:id="@+id/img_favorite"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginEnd="4dp"
+            android:id="@+id/favorito"
+            android:layout_width="46dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="8dp"
+            android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/favorito" />
+            app:srcCompat="@drawable/fav"
+            tools:visibility="visible" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

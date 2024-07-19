@@ -5,21 +5,23 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#333535"
+    android:background="@color/black"
     android:orientation="vertical"
+    android:visibility="visible"
     tools:context=".filmesuninter.presentation.view.DetailActivity">
 
     <ImageView
-        android:id="@+id/img_poster"
-        android:layout_width="match_parent"
-        android:layout_height="450dp"
-        android:layout_marginHorizontal="45dp"
+        android:id="@+id/imgposter"
+        android:layout_width="254dp"
+        android:layout_height="352dp"
+        android:layout_marginHorizontal="87dp"
         android:layout_marginTop="10dp"
+        android:background="@color/black"
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/oster" />
 
     <TextView
-        android:id="@+id/txt_detailname"
+        android:id="@+id/txtdetailname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -30,43 +32,49 @@
         android:textSize="30dp"
         android:textStyle="bold"
         tools:text="Inside Out 2" />
-    
+
     <FrameLayout
-        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp">
+
 
         <ImageView
-            android:id="@+id/img_detailbackground"
+            android:id="@+id/imgdetailbackground"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/grea" />
+            android:layout_height="wrap_content"
+            android:alpha="0.5"
+            app:srcCompat="@drawable/backdrop" />
 
         <ScrollView
-            android:layout_width="374dp"
-            android:layout_height="match_parent">
+            android:layout_width="match_parent"
+            android:layout_height="232dp">
 
             <TextView
-                android:id="@+id/txt_detaildescription"
+                android:id="@+id/txtdetaildescription"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="75dp"
                 android:textColor="#FFFFFF"
                 android:textSize="24dp"
                 tools:text="Teenager Riley's mind headquarters is undergoing a sudden demolition to make room for something entirely unexpected: new Emotions! Joy, Sadness, Anger, Fear and Disgust, who’ve long been running a successful operation by all accounts, aren’t sure how to feel when Anxiety shows up. And it looks like she’s not alone." />
+
+
         </ScrollView>
+
+        <Button
+            android:id="@+id/btndefav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="126dp"
+            android:fontFamily="serif"
+            tools:text="Favoritar" />
 
 
     </FrameLayout>
 
 
-    <Button
-        android:id="@+id/btn_detailfav"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:fontFamily="serif"
-
-        tools:text="Favoritar" />
 </LinearLayout>
