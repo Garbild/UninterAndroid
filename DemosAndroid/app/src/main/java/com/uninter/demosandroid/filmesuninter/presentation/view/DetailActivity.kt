@@ -10,7 +10,7 @@ import com.uninter.demosandroid.R
 import com.uninter.demosandroid.filmesuninter.domain.entity.Filme
 
 class DetailActivity : AppCompatActivity() {
-
+//
     private lateinit var txtTitle: TextView
     private lateinit var txtDescription: TextView
     private lateinit var imgBack: ImageView
