@@ -21,9 +21,10 @@ class FilmeAdapter(private val itens: List<Filme>) : RecyclerView.Adapter<FilmeA
         fun bindView(filme: Filme) {
             with(itemView) {
                 val imgPicture = findViewById<ImageView>(R.id.imgpicture)
+
                 Glide.with(this).load("$imgBasePath${filme.backdropPath}").into(imgPicture)
 
-                findViewById<ImageView>(R.id.imgfavorite).visibility = if (filme.favorite) View.VISIBLE else View.GONE
+                findViewById<ImageView>(R.id.favorito).visibility = if (filme.favorite) View.VISIBLE else View.GONE
 
                 findViewById<TextView>(R.id.txtTitle).text = filme.title
 
@@ -31,6 +32,7 @@ class FilmeAdapter(private val itens: List<Filme>) : RecyclerView.Adapter<FilmeA
                     val intent = Intent(context, DetailActivity::class.java)
                     intent.putExtra("filme", filme)
                     context.startActivity(intent)
+
                 }
             }
         }

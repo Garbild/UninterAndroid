@@ -5,9 +5,13 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.uninter.demosandroid.R
 import com.uninter.demosandroid.filmesuninter.domain.entity.Filme
+import com.uninter.demosandroid.filmesuninter.presentation.viewmodel.DetailViewModel
+import com.uninter.demosandroid.filmesuninter.presentation.viewmodel.FilmeViewModelFactory
+import com.uninter.demosandroid.filmesuninter.presentation.viewmodel.MainViewModel
 
 class DetailActivity : AppCompatActivity() {
 //
@@ -19,6 +23,11 @@ class DetailActivity : AppCompatActivity() {
     private val imgBasePath = "https://image.tmdb.org/t/p/w500"
 
     private var filme: Filme? = null
+
+    val viewModel by lazy {
+        var factory = FilmeViewModelFactory(application)
+        ViewModelProvider( this, factory)[DetailViewModel::class.java]
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,11 +58,14 @@ class DetailActivity : AppCompatActivity() {
         }//
     }
 
-    private fun unfavorite(filme: Filme) {
-        // Implementação para desfavoritar
-    }
-
     private fun favorite(filme: Filme) {
         // Implementação para favoritar
+        viewModel.favorite(filme)
     }
+
+    private fun unfavorite(filme: Filme) {
+        // Implementação para desfavoritar
+        viewModel.unfavorite(filme)
+    }
+
 }
